@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #14151a;
+  --ink-soft: #5b5f6b;
+  --ink-faint: #9295a3;
+  --bg: #ffffff;
+  --surface: #f4f4fa;
+  --line: #e6e6ef;
+  --accent: #4f46e5;
+  --accent-soft: #ecebfd;
+  --accent2: #f59e0b;
+  --accent2-soft: #fef3e0;
+  --max-w: 980px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+  font-size: 15.5px;
+}
+
+h1, h2, h3, .disp { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+
+svg.ic { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; vertical-align: -3px; }
+
+a { color: var(--accent); }
+
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
+
+/* ---------- Hero ---------- */
+
+.hero { padding: 52px 0 0; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.hero-main h1 {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.02;
+  margin: 0 0 20px;
+  letter-spacing: -0.02em;
+}
+
+.ask {
+  font-size: 1.15rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.ask mark {
+  background: var(--accent2-soft);
+  color: var(--accent2);
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.ask svg.ic { width: 22px; height: 22px; color: var(--accent2); }
+
+.hero-card {
+  background: var(--ink);
+  color: #fff;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.hero-card .card-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: #d8d9e2;
+}
+
+.hero-card .card-row a { color: #fff; text-decoration: none; }
+.hero-card svg.ic { color: var(--accent2); }
+
+.cv-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff !important;
+  text-decoration: none;
+  padding: 11px 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin: 6px 0 18px;
+}
+
+.hero-card .tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.hero-card .tag {
+  font-size: 0.72rem;
+  background: rgba(255,255,255,0.1);
+  color: #d8d9e2;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Section shell ---------- */
+
+section { padding: 46px 0; }
+
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.sec-head .ic-badge {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sec-head h2 { font-size: 1.15rem; font-weight: 700; margin: 0; }
+
+/* ---------- Grid cards (education / projects) ---------- */
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+@media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.card .c-date { color: var(--accent2); font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.card h3 { font-size: 1.02rem; margin: 0 0 4px; }
+.card .c-sub { color: var(--ink-soft); font-size: 0.86rem; margin-bottom: 12px; }
+
+.gpa-line {
+  margin: 0;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.gpa-line .soft { font-weight: 500; color: var(--ink-faint); }
+
+.stat-pair { display: flex; gap: 24px; }
+.stat-pair .num { font-size: 1.4rem; font-weight: 700; color: var(--accent); font-family: 'Space Grotesk', sans-serif; }
+.stat-pair .lbl { font-size: 0.72rem; color: var(--ink-faint); }
+
+.card p { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+.card a.gh { font-size: 0.84rem; display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; }
+
+/* ---------- Honors grid (badges) ---------- */
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 760px) { .grid-3 { grid-template-columns: 1fr; } }
+
+.badge-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.badge-card svg.ic { color: var(--accent2); width: 20px; height: 20px; margin-bottom: 8px; }
+.badge-card .b-title { font-size: 0.86rem; font-weight: 400; color: var(--ink-soft); margin-bottom: 6px; line-height: 1.4; }
+.badge-card .b-title b { font-weight: 700; color: var(--ink); }
+.badge-card .b-title .soft { color: var(--ink-soft); }
+.badge-card .b-date { font-size: 0.74rem; color: var(--ink-faint); }
+
+/* ---------- Interests row ---------- */
+
+.tag-line { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-line .tag2 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+/* ---------- Timeline (research experience) ---------- */
+
+.tl { border-left: 3px solid var(--accent-soft); padding-left: 22px; }
+.tl-item { position: relative; margin-bottom: 26px; }
+.tl-item:last-child { margin-bottom: 0; }
+.tl-item:before {
+  content: "";
+  position: absolute;
+  left: -28px; top: 4px;
+  width: 12px; height: 12px;
+  border-radius: 3px;
+  background: var(--accent);
+}
+.tl-date { font-size: 0.74rem; font-weight: 700; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+.tl-item h3 { font-size: 1rem; margin: 0 0 3px; }
+.tl-item .meta { color: var(--ink-soft); font-size: 0.88rem; margin-bottom: 4px; }
+.tl-item p { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+
+/* ---------- Skills ---------- */
+
+.skill-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-chip {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface);
+  padding: 9px 14px;
+  border-radius: 9px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+.skill-chip svg.ic { color: var(--accent); }
+
+/* ---------- Simple compact lists (academic / teaching / volunteer) ---------- */
+
+ul.compact { list-style: none; margin: 0; padding: 0; }
+ul.compact li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+ul.compact li:last-child { border-bottom: none; }
+ul.compact .d { color: var(--ink-faint); font-size: 0.78rem; white-space: nowrap; }
+
+/* ---------- FAQ (static, no accordion) ---------- */
+
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 760px) { .faq-grid { grid-template-columns: 1fr; } }
+
+.faq-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.faq-card .q {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.94rem;
+  margin-bottom: 8px;
+}
+
+.faq-card .q svg.ic { color: var(--accent); margin-top: 2px; }
+.faq-card .a { color: var(--ink-soft); font-size: 0.87rem; }
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 26px 0 44px;
+  color: var(--ink-faint);
+  font-size: 0.84rem;
+  text-align: center;
+}
